@@ -1,0 +1,26 @@
+.Way span{
+    margin-left: 1rem;
+}
+.WayNotActive{
+    color: rgb(136, 136, 136);
+}
+.BoxForm{
+    width: 100%;
+    height: 100%;
+    margin: 2rem 0;
+    background-color:#1e1f24;
+    border-radius: 20px;
+    box-shadow: 10px 10px 50px black;
+}
+.mainBox{
+    width: 100%;
+    padding: 0.1rem 1.5rem;
+}
+/* .mainBox Button{
+    color: goldenrod;
+    font-family: 'iransans';
+    border-radius: 10px;
+} */
+.PlusIcon{
+    margin-left: 1rem ;
+}

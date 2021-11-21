@@ -1,0 +1,42 @@
+.Card{
+    width: 95%;
+    margin: 2rem 0 ;
+    height: 4rem;
+    background-color: rgb(53, 53, 53);
+    border-radius: 10px;
+    color: #ffffff;
+}
+.CardBody{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin: 0 2rem;
+    font-size: 15px;
+}
+.RightSide{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.CardIcon{
+    font-size: 25px;
+    margin-left: 1rem;
+}
+.RightSide div{
+    margin-left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.RightSide div span{
+    color: rgb(156, 156, 154);
+}
+.cardId{
+    direction: ltr;
+    margin: 1rem;
+}
+.cardLink{
+    color: goldenrod;
+}
