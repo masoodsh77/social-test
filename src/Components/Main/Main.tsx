@@ -1,10 +1,16 @@
 import classes from "./Main.module.css";
 import React from "react";
-import { Button } from "@mui/material";
-import {FaPlus} from 'react-icons/fa'
+import { Button, Collapse } from "@mui/material";
+import { FaPlus } from "react-icons/fa";
 import Card from "./Card/Card";
+import Form from "./Form/Form";
 
 const Main = () => {
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
   return (
     <div>
       <div>
@@ -20,8 +26,19 @@ const Main = () => {
       <div className={classes.BoxForm}>
         <div className={classes.mainBox}>
           <h5>مسیر های ارتباطی</h5>
-          <Button color="warning"> <FaPlus className={classes.PlusIcon}/> افزودن مسیر ارتباطی </Button>
-          <Card/>
+          <Button
+            className={classes.ADDBtn}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            color="warning"
+          >
+            {" "}
+            <FaPlus className={classes.PlusIcon} /> افزودن مسیر ارتباطی{" "}
+          </Button>
+          <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <Form/>
+          </Collapse>
+          <Card />
         </div>
       </div>
     </div>

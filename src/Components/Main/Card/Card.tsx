@@ -24,8 +24,8 @@ const Card = () => {
           </div>
         </div>
         <div>
-          <Button color="warning">ویرایش</Button>
-          <Button color="error">حذف</Button>
+          <Button color="warning" className={classes.EditBTN}>ویرایش</Button>
+          <Button color="error" className={classes.DeleteBTN}>حذف</Button>
         </div>
       </div>
     </div>

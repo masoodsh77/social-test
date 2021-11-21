@@ -40,3 +40,13 @@
 .cardLink{
     color: goldenrod;
 }
+.EditBTN{
+    color: goldenrod !important;
+    font-family: 'iransans' !important;
+    border-radius: 10px !important;
+}
+.DeleteBTN{
+    color: red !important;
+    font-family: 'iransans' !important;
+    border-radius: 10px !important;
+}

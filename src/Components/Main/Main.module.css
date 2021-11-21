@@ -16,11 +16,11 @@
     width: 100%;
     padding: 0.1rem 1.5rem;
 }
-/* .mainBox Button{
-    color: goldenrod;
-    font-family: 'iransans';
-    border-radius: 10px;
-} */
+.ADDBtn{
+    color: goldenrod !important;
+    font-family: 'iransans' !important;
+    border-radius: 10px !important;
+}
 .PlusIcon{
     margin-left: 1rem ;
 }
