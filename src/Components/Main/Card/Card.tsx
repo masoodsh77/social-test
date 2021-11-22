@@ -1,6 +1,5 @@
 import classes from "./Card.module.css";
 import React from "react";
-import { FaTwitter } from "react-icons/fa";
 import { Button } from "@mui/material";
 
 interface CardType {
