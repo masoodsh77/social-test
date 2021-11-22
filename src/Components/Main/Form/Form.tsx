@@ -13,7 +13,7 @@ const Form = () => {
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             // value={age}
-            label="Age"
+            label="نوع"
             // onChange={handleChange}
           >
             <MenuItem value={10}>Ten</MenuItem>
