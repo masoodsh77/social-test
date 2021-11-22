@@ -14,3 +14,15 @@ body , html , #root {
 code {
   font-family: 'iransans'
 }
+.css-1kty9di-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+  color: #fff !important;
+  right: -43px;
+  top: -3px;
+}
+.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border-color: #fff !important;
+}
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border: 1px solid #fff !important;
+}

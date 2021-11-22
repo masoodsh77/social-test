@@ -3,23 +3,30 @@ import React from "react";
 import { FaTwitter } from "react-icons/fa";
 import { Button } from "@mui/material";
 
-const Card = () => {
+interface CardType {
+  Icon:any;
+  social:string;
+  ID:string;
+  Link:string;
+}
+
+const Card:React.FC<CardType> = ({Icon , social , ID , Link}:CardType) => {
   return (
     <div className={classes.Card}>
       <div className={classes.CardBody}>
         <div className={classes.RightSide}>
           <div>
-            <FaTwitter className={classes.CardIcon} />
-            <h4>توییتر</h4>
+            {Icon}
+            <h4>{social}</h4>
           </div>
           <div>
             <span> آی دی (ID) :</span>
-            <div className={classes.cardId}>@masood</div>
+            <div className={classes.cardId}>{ID}</div>
           </div>
           <div>
             <span> لینک :</span>
             <div className={classes.cardLink}>
-              http://twitter.com/masoodsh73
+              {Link}
             </div>
           </div>
         </div>

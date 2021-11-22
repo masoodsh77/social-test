@@ -1,13 +1,13 @@
-.Form{
+.Form {
     width: 95%;
-    margin: 2rem 0 0 0 ;
-    height: 9rem;
+    margin: 2rem 0 0 0;
+    height: 12rem;
     background-color: rgb(53, 53, 53);
     border-radius: 10px;
     color: #ffffff;
-
 }
-.FormBox{
+
+.FormBox {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -16,15 +16,57 @@
     padding: 0 1rem;
     height: 100%;
 }
-.FormBox h6{
+
+.FormBox h6 {
     width: 100%;
 }
 
-.SelectBox{
+.FormItems{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 95%;
+}
+.SelectBox {
     width: 15rem;
 }
-/* lable .MuiInputLabel-root .MuiInputLabel-formControl .MuiInputLabel-animated .MuiInputLabel-outlined .MuiFormLabel-root .MuiFormLabel-colorPrimary .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
-    right: 25px !important;
-    left: auto !important;
-    font-family: 'iransans' !important;
-} */
+
+.SelectBox label {
+    right: 23px;
+    left: 0;
+    font-family: "iransans";
+    color: #ffffff;
+}
+
+.select label {
+    right: 23px;
+    left: 0;
+    font-family: "iransans";
+    color: #ffffff;
+}
+
+.select svg {
+    color: #ffffff;
+    left: 7px;
+    right: 210px;
+}
+
+.select fieldset legend {
+    text-align: right;
+}
+
+.SubmitBTN {
+    text-align: left;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.addWay {
+    font-family: "iransans";
+    box-shadow: 0px 0px 15px goldenrod;
+    margin-right: 1rem;
+}
+
+.unSubmit {
+    font-family: "iransans";
+}

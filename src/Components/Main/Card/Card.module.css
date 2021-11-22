@@ -20,7 +20,7 @@
     justify-content: space-between;
     align-items: center;
 }
-.CardIcon{
+.RightSide svg{
     font-size: 25px;
     margin-left: 1rem;
 }
