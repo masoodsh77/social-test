@@ -9,7 +9,11 @@ import {
 import React from "react";
 import classes from "./Form.module.css";
 
-const Form = () => {
+interface FromType {
+  setExpanded: any;
+}
+
+const Form: React.FC<FromType> = ({ setExpanded }: FromType) => {
   return (
     <div className={classes.Form}>
       <div className={classes.FormBox}>
@@ -20,7 +24,6 @@ const Form = () => {
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
-              // value={age}
               label="نوع"
               className={classes.select}
               // onChange={handleChange}
@@ -33,14 +36,27 @@ const Form = () => {
               <MenuItem value={60}>وبسایت</MenuItem>
             </Select>
           </FormControl>
-          <TextField className={classes.select} id="outlined-basic" label="لینک" variant="outlined" />
-          <TextField className={classes.select}
+          <TextField
+            className={classes.select}
+            id="outlined-basic"
+            label="لینک"
+            variant="outlined"
+          />
+          <TextField
+            className={classes.select}
             id="outlined-basic"
             label="آی دی (ID)"
             variant="outlined"
           />
           <div className={classes.SubmitBTN}>
-            <Button variant="outlined" className={classes.unSubmit} color="inherit">انصراف</Button>
+            <Button
+              variant="outlined"
+              className={classes.unSubmit}
+              color="inherit"
+              onClick={()=>{setExpanded(false)}}
+            >
+              انصراف
+            </Button>
 
             <Button
               color="warning"
