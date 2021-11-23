@@ -62,11 +62,11 @@
 }
 
 .addWay {
-    font-family: "iransans";
-    box-shadow: 0px 0px 15px goldenrod;
-    margin-right: 1rem;
+    font-family: "iransans"  !important;
+    box-shadow: 0px 0px 15px goldenrod !important;
+    margin-right: 1rem !important;
 }
 
 .unSubmit {
-    font-family: "iransans";
+    font-family: "iransans" !important;
 }

@@ -9,6 +9,7 @@
   align-items: flex-start;
   flex-wrap: wrap;
   align-content: flex-start;
+  overflow: hidden;
 }
 .App-body{
   width: 70%;
