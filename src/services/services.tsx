@@ -31,3 +31,17 @@ export const DeleteItem = async (Id:number) => {
     });
   return data;
 };
+//-------------------ADD Social-----------------------
+export const ADDSocials = async (value:any) => {
+  const data = await axios
+    .post(baseUrl , {value})
+    .then((res) => {
+      if (res.status === 201) {
+        return res;
+      }
+    })
+    .catch((err) => {
+        return err.response
+    });
+  return data;
+};

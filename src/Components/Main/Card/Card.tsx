@@ -18,6 +18,9 @@ interface CardType {
 }
 const Card: React.FC<CardType> = ({ data , setUpdateCards ,UpdateCards }: CardType) => {
 
+  console.log(data.value);
+
+
   const handleDelete = (e: any) => {
     DeleteItem(e.target.value).then(res=>{
       console.log(res);
@@ -25,22 +28,40 @@ const Card: React.FC<CardType> = ({ data , setUpdateCards ,UpdateCards }: CardTy
     })
   };
 
-  const renderSwitch = (param: any) => {
+  const renderSwitchIcon = (param: any) => {
     switch (param) {
-      case "1":
-        return <FaTwitter />;
-      case "2":
+      case 1:
+        return < FaInstagram/>;
+      case 2:
         return <FaTelegramPlane />;
-      case "3":
-        return <FaLinkedin />;
-      case "4":
-        return <FaInstagram />;
-      case "5":
-        return <FaGlobe />;
-      case "6":
+      case 3:
+        return <FaTwitter />;
+      case 4:
         return <FaFacebookF />;
+      case 5:
+        return <FaLinkedin />;
+      case 6:
+        return <FaGlobe />;
       default:
         return <FaTwitter />;
+    }
+  };
+  const renderSwitchSocials = (param: any) => {
+    switch (param) {
+      case 1:
+        return "اینستاگرام";
+      case 2:
+        return "تلگرام";
+      case 3:
+        return "توییتر";
+      case 4:
+        return "فیسبوک";
+      case 5:
+        return "لینکدین";
+      case 6:
+        return "وبسایت";
+      default:
+        return "پیدا نشد";
     }
   };
 
@@ -49,16 +70,16 @@ const Card: React.FC<CardType> = ({ data , setUpdateCards ,UpdateCards }: CardTy
       <div className={classes.CardBody}>
         <div className={classes.RightSide}>
           <div>
-            {renderSwitch(data.Icon)}
-            <h4>{data.socialName}</h4>
+            {renderSwitchIcon(data.value.Socials)}
+            <h4>{renderSwitchSocials(data.value.Socials)}</h4>
           </div>
           <div>
             <span> آی دی (ID) :</span>
-            <div className={classes.cardId}>{data.ID}</div>
+            <div className={classes.cardId}>{data.value.IDs}</div>
           </div>
           <div>
             <span> لینک :</span>
-            <div className={classes.cardLink}>{data.Link}</div>
+            <div className={classes.cardLink}>{data.value.Links}</div>
           </div>
         </div>
         <div>
