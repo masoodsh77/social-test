@@ -9,11 +9,14 @@ import {
 import React from "react";
 import classes from "./Form.module.css";
 import { useFormik } from "formik";
-import { ADDSocials } from "../../../services/services";
+import { ADDSocials ,EditSocials} from "../../../services/services";
 import { useState } from "react";
 
 interface FromType {
   setExpanded: any;
+  setIsEdit:any;
+  editData: any;
+  isEdit:boolean;
 }
 
 interface IFormik {
@@ -22,14 +25,23 @@ interface IFormik {
   IDs: string;
 }
 
-const Form: React.FC<FromType> = ({ setExpanded }: FromType) => {
+const Form: React.FC<FromType> = ({ setExpanded ,setIsEdit ,editData , isEdit}: FromType) => {
   const [UpdateList , setUpdateList] = useState(false)
+
   const initialValues: IFormik = {
-    Socials: "",
-    Links: "",
-    IDs: "",
+    Socials: isEdit ? editData.value.Socials : "" ,
+    Links: isEdit ? editData.value.Links : "",
+    IDs: isEdit ? editData.value.IDs : "",
   };
   const onSubmit = (values: any) => {
+    if(isEdit){
+      EditSocials(editData.id , values).then(res=>{
+       if(res.status === 200){
+         setExpanded(false)
+         setUpdateList(!UpdateList)
+       }
+      })
+    }else{
     ADDSocials(values).then(res=>{
       if(res.status === 201){
         formik.resetForm()
@@ -37,6 +49,7 @@ const Form: React.FC<FromType> = ({ setExpanded }: FromType) => {
         setExpanded(false)
       }
     })
+  }
   };
   const formik = useFormik({
     initialValues,
@@ -45,7 +58,7 @@ const Form: React.FC<FromType> = ({ setExpanded }: FromType) => {
   return (
     <div className={classes.Form}>
       <div className={classes.FormBox}>
-        <h6>افزودن مسیر ارتباطی</h6>
+        <h6>{isEdit ? "ویرایش مسیر ارتباطی" : "افزودن مسیر ارتباطی"}</h6>
         <div className={classes.FormItems}>
           <form onSubmit={formik.handleSubmit} className={classes.FormItems}>
             <FormControl className={classes.SelectBox}>
@@ -92,6 +105,7 @@ const Form: React.FC<FromType> = ({ setExpanded }: FromType) => {
                 color="inherit"
                 onClick={() => {
                   setExpanded(false);
+                  setIsEdit(false)
                 }}
               >
                 انصراف
@@ -103,7 +117,7 @@ const Form: React.FC<FromType> = ({ setExpanded }: FromType) => {
                 className={classes.addWay}
                 type="submit"
               >
-                ثبت مسیر ارتباطی
+                {isEdit ?" ویرایش مسیر ارتباطی" : "ثبت مسیر ارتباطی"}
               </Button>
             </div>
           </form>

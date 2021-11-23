@@ -15,10 +15,11 @@ interface CardType {
   data: any;
   setUpdateCards:any;
   UpdateCards:boolean;
+  setExpanded:any;
+  setIsEdit:any;
+  setEditData:any
 }
-const Card: React.FC<CardType> = ({ data , setUpdateCards ,UpdateCards }: CardType) => {
-
-  console.log(data.value);
+const Card: React.FC<CardType> = ({ data , setUpdateCards ,UpdateCards ,setExpanded , setIsEdit ,setEditData}: CardType) => {
 
 
   const handleDelete = (e: any) => {
@@ -27,6 +28,12 @@ const Card: React.FC<CardType> = ({ data , setUpdateCards ,UpdateCards }: CardTy
       setUpdateCards(!UpdateCards)
     })
   };
+
+  const handleEdit = () =>{
+    setExpanded(true)
+    setIsEdit(true)
+    setEditData(data)
+  }
 
   const renderSwitchIcon = (param: any) => {
     switch (param) {
@@ -83,7 +90,7 @@ const Card: React.FC<CardType> = ({ data , setUpdateCards ,UpdateCards }: CardTy
           </div>
         </div>
         <div>
-          <Button color="warning" className={classes.EditBTN}>
+          <Button color="warning" className={classes.EditBTN} value={data.id} onClick={handleEdit}>
             ویرایش
           </Button>
           <Button

@@ -45,3 +45,16 @@ export const ADDSocials = async (value:any) => {
     });
   return data;
 };
+//-------------------Edit Social-----------------------
+export const EditSocials = async (id:number  , value:any) => {
+  const data = await axios
+    .put(`${baseUrl }/${id}`, {value})
+    .then((res) => {
+      if(res.status === 200)
+        return res;
+    })
+    .catch((err) => {
+        return err.response
+    });
+  return data;
+};
